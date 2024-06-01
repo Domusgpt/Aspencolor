@@ -33,7 +33,7 @@
 </head>
 <body class="bg-gray-100 text-gray-800" style="background-image: url('https://i.imgur.com/DZLDGUV.jpg'); background-size: cover;">
     <!-- Header -->
-    <header class="sticky top-0 bg-white shadow" style="background-image: url('https://i.imgur.com/bNgGjid.jpg'); background-size: cover; background-position: center;">
+    <header class="sticky top-0 bg-white shadow cycle-bg header-bg-1" style="background-size: cover; background-position: center;">
         <nav class="flex w-full justify-center mt-4">
             <ul class="flex w-full justify-between space-x-0">
                 <li class="flex flex-col items-center" style="background-color: aquamarine; width: 100%;">
@@ -60,14 +60,14 @@
     <main class="py-20">
         <div class="container mx-auto text-center text-box">
             <h2 class="text-4xl font-bold mb-6 header-box pulsating-text">Discover Aspen</h2>
-            <div class="video-container mb-8 text-box mx-auto" style="background-image: url('https://i.imgur.com/TXIInME.jpg');">
-                <iframe src="https://www.youtube.com/embed/o8vhjeeZKjE" frameborder="0" allowfullscreen></iframe>
+            <div class="video-container mb-8 text-box mx-auto cycle-bg video-bg-1">
+                <iframe src="https://www.youtube.com/embed/pqAs4jV51Bs" frameborder="0" allowfullscreen></iframe>
             </div>
         </div>
     </main>
 
     <!-- Footer -->
-    <footer class="bg-white py-6" style="background-image: url('https://i.imgur.com/5VB5vgM.png'); background-size: cover;">
+    <footer class="bg-white py-6 cycle-bg footer-bg-1" style="background-size: cover; background-position: center;">
         <div class="container mx-auto text-center text-box">
             <p class="footer-text" style="background-color: purple; color: aquamarine;">&copy; 2024 Aspen The Coloring Book. All rights reserved.</p>
             <p class="footer-text" style="background-color: purple; color: aquamarine;">Follow us on 
@@ -96,40 +96,35 @@
 
     <script>
         document.addEventListener('DOMContentLoaded', function() {
-            // Smooth Scrolling
-            document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-                anchor.addEventListener('click', function(e) {
-                    e.preventDefault();
-                    document.querySelector(this.getAttribute('href')).scrollIntoView({
-                        behavior: 'smooth'
-                    });
+            // Cycle background images on click
+            const cycleElements = document.querySelectorAll('.cycle-bg');
+
+            cycleElements.forEach(element => {
+                element.addEventListener('click', function() {
+                    if (this.classList.contains('header-bg-1')) {
+                        this.classList.remove('header-bg-1');
+                        this.classList.add('header-bg-2');
+                    } else if (this.classList.contains('header-bg-2')) {
+                        this.classList.remove('header-bg-2');
+                        this.classList.add('header-bg-1');
+                    }
+
+                    if (this.classList.contains('footer-bg-1')) {
+                        this.classList.remove('footer-bg-1');
+                        this.classList.add('footer-bg-2');
+                    } else if (this.classList.contains('footer-bg-2')) {
+                        this.classList.remove('footer-bg-2');
+                        this.classList.add('footer-bg-1');
+                    }
+
+                    if (this.classList.contains('video-bg-1')) {
+                        this.classList.remove('video-bg-1');
+                        this.classList.add('video-bg-2');
+                    } else if (this.classList.contains('video-bg-2')) {
+                        this.classList.remove('video-bg-2');
+                        this.classList.add('video-bg-1');
+                    }
                 });
-            });
-
-            // Form Submission
-            document.querySelector('button[onclick="sendEmail()"]').addEventListener('click', function() {
-                const request = document.getElementById('customRequest').value;
-                if (request.trim() === '') {
-                    alert('Please enter your request.');
-                    return;
-                }
-                alert('Your request has been sent!');
-                window.location.href = `mailto:ceo@clearseassolutions.com?subject=Custom Coloring Book Request&body=${encodeURIComponent(request)}`;
-            });
-
-            // Lightbox for Gallery Images
-            document.querySelectorAll('.gallery img').forEach(img => {
-                img.addEventListener('click', function() {
-                    const lightbox = document.getElementById('lightbox');
-                    const lightboxImg = document.getElementById('lightbox-img');
-                    lightbox.style.display = 'block';
-                    lightboxImg.src = this.src;
-                });
-            });
-
-            // Close Lightbox
-            document.querySelector('.lightbox .close').addEventListener('click', function() {
-                document.getElementById('lightbox').style.display = 'none';
             });
         });
     </script>
