@@ -1,0 +1,144 @@
+/* General Styles */
+body {
+    font-family: 'Arial', sans-serif;
+    color: #333;
+}
+
+/* Header Styles */
+header {
+    background-size: cover;
+    background-position: center;
+}
+
+/* Navigation Buttons */
+nav ul {
+    display: flex;
+    justify-content: space-between;
+    padding: 0;
+    list-style: none;
+}
+
+nav li {
+    flex: 1;
+    text-align: center;
+    background-color: aquamarine;
+}
+
+nav li:nth-child(odd) {
+    background-color: purple;
+}
+
+.button-img {
+    display: block;
+    margin: 0 auto;
+    width: 66%;
+    height: 66%;
+}
+
+.button-label {
+    display: block;
+    color: white;
+    font-size: 1.5em;
+    font-weight: bold;
+    margin-top: -10px;
+}
+
+/* Main Content */
+.text-box {
+    background-color: rgba(255, 255, 255, 0.8);
+    padding: 20px;
+    border-radius: 10px;
+}
+
+.header-box {
+    background-color: turquoise;
+    color: purple;
+    padding: 10px;
+    border-radius: 5px;
+    font-weight: bold;
+    font-size: 2em;
+}
+
+/* Video Container */
+.video-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    max-width: 840px;
+    margin: 0 auto;
+    background-size: cover;
+    background-position: center;
+    padding: 20px;
+    border-radius: 10px;
+}
+
+.video-container iframe {
+    width: 100%;
+    height: auto;
+    aspect-ratio: 16/9;
+}
+
+/* Footer Styles */
+footer {
+    background-size: cover;
+    background-position: center;
+}
+
+.footer-text {
+    background-color: purple;
+    color: aquamarine;
+    font-family: 'Cursive', sans-serif;
+    padding: 10px;
+    border-radius: 5px;
+    display: inline-block;
+    margin: 5px 0;
+}
+
+/* Lightbox Styles */
+.lightbox {
+    display: none;
+    position: fixed;
+    z-index: 999;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgba(0, 0, 0, 0.9);
+}
+
+.lightbox img {
+    margin: auto;
+    display: block;
+    width: 80%;
+    max-width: 700px;
+}
+
+.lightbox .close {
+    position: absolute;
+    top: 15px;
+    right: 35px;
+    color: #f1f1f1;
+    font-size: 40px;
+    font-weight: bold;
+    transition: 0.3s;
+}
+
+.lightbox .close:hover,
+.lightbox .close:focus {
+    color: #bbb;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+/* Animation for Pulsating Text */
+@keyframes pulsate {
+    0% { color: yellow; }
+    33% { color: black; }
+    66% { color: neon-green; }
+    100% { color: white; }
+}
+
+.pulsating-text {
+    animation: pulsate 2s infinite;
+}
