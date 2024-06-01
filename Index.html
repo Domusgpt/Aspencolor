@@ -3,11 +3,33 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>About - Aspen The Coloring Book</title>
+    <title>Aspen The Coloring Book</title>
     <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
     <link rel="stylesheet" href="styles.css">
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/lightbox2/2.11.3/js/lightbox.min.js"></script>
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/lightbox2/2.11.3/css/lightbox.min.css" rel="stylesheet" />
+    <meta name="description" content="Aspen The Coloring Book - A tribute to the beautiful Aspen. Discover and buy the coloring book created with love and AI.">
+    <meta name="keywords" content="Aspen, Coloring Book, Art, AI">
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "Product",
+        "name": "Aspen The Coloring Book",
+        "image": "https://i.imgur.com/TFtp0Om.jpg",
+        "description": "A tribute to Aspen created with love and artificial intelligence.",
+        "sku": "12345",
+        "brand": {
+            "@type": "Brand",
+            "name": "Local Artist"
+        },
+        "offers": {
+            "@type": "Offer",
+            "url": "https://www.paypal.com/cgi-bin/webscr?cmd=_xclick&business=Phillips.paul.email@gmail.com&item_name=Aspen Coloring Book&amount=10.00&currency_code=USD&notify_url=http://www.yoursite.com/paypal_ipn",
+            "priceCurrency": "USD",
+            "price": "10.00",
+            "itemCondition": "https://schema.org/NewCondition",
+            "availability": "https://schema.org/InStock"
+        }
+    }
+    </script>
 </head>
 <body class="bg-gray-100 text-gray-800" style="background-image: url('https://i.imgur.com/DZLDGUV.jpg'); background-size: cover;">
     <!-- Header -->
@@ -33,19 +55,10 @@
     <!-- Main Content -->
     <main class="py-20">
         <div class="container mx-auto text-center text-box">
-            <h2 class="text-4xl font-bold mb-6 header-box pulsating-text">About Aspen</h2>
-            <div class="video-container mb-8 text-box mx-auto cycle-bg video-bg-1">
-                <iframe src="https://www.youtube.com/embed/MMIWIYXMctY" frameborder="0" allowfullscreen></iframe>
+            <h2 class="text-4xl font-bold mb-6 header-box pulsating-text">Discover Aspen</h2>
+            <div class="video-container mb-8 text-box mx-auto cycle-bg video-bg-1" style="display: flex; justify-content: center;">
+                <iframe src="https://www.youtube.com/embed/pqAs4jV51Bs" frameborder="0" allowfullscreen></iframe>
             </div>
-            <p class="text-box p-6 bg-white bg-opacity-75 rounded-lg">
-                A local's tribute to Aspen. Created with love and artificial intelligence. May these mountains bring you tranquility and harmony.
-                <br>
-                Aspen is a special place with beautiful landscapes and a vibrant community. Our coloring book captures the essence of this wonderful location, allowing you to bring it to life with your own colors.
-                <br><br>
-                <span class="pulsating-text">Feel free to request custom coloring books:</span>
-                <input type="text" id="customRequest" placeholder="Enter your request here" class="mt-2 p-2 w-full bg-white bg-opacity-75 rounded-lg">
-                <button onclick="sendEmail()" class="mt-2 p-2 bg-aquamarine text-purple rounded-lg">Send</button>
-            </p>
         </div>
     </main>
 
@@ -138,12 +151,29 @@
                     if (this.classList.contains('button-bg-1')) {
                         this.classList.remove('button-bg-1');
                         this.classList.add('button-bg-2');
-                    } else if (this.classList.contains('button-bg-2')) {
-                        this.classList.remove('button-bg-2');
+                    } else if (this.classList.contains('button-bg-2')) {this.classList.remove('button-bg-2');
                         this.classList.add('button-bg-1');
                     }
                 });
             });
+        });
+    </script>
+
+    <script>
+        // Snow animation
+        document.addEventListener('DOMContentLoaded', function() {
+            function createSnowFlake() {
+                const snowFlake = document.createElement('div');
+                snowFlake.classList.add('snowflake');
+                snowFlake.style.left = `${Math.random() * window.innerWidth}px`;
+                document.body.appendChild(snowFlake);
+                
+                setTimeout(() => {
+                    snowFlake.remove();
+                }, 10000);
+            }
+
+            setInterval(createSnowFlake, 200);
         });
     </script>
 </body>
