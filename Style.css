@@ -2,10 +2,13 @@
 body {
     font-family: 'Arial', sans-serif;
     color: #333;
+    background-image: url('https://i.imgur.com/g1QstK9.jpeg');
+    background-size: cover;
 }
 
-/* Header Styles */
-header {
+/* Header and Footer Styles */
+header, footer {
+    background-image: url('https://imgur.com/51ueylh.jpg');
     background-size: cover;
     background-position: center;
 }
@@ -66,10 +69,15 @@ nav li:nth-child(odd) {
     align-items: center;
     max-width: 840px;
     margin: 0 auto;
+    background-image: url('https://imgur.com/a/I0rGLFr.jpg');
     background-size: cover;
     background-position: center;
     padding: 20px;
     border-radius: 10px;
+}
+
+.video-container:nth-child(odd) {
+    background-image: url('https://imgur.com/a/I0rGLFr2.jpg');
 }
 
 .video-container iframe {
