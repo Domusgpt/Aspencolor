@@ -9,8 +9,20 @@ body {
 /* Header and Footer Styles */
 header, footer {
     background-image: url('https://imgur.com/51ueylh.jpg');
-    background-size: cover;
-    background-position: center;
+    background-size: coverbackground-position: center;
+    transition: background-image 0.5s ease-in-out;
+}
+
+header.cycle-bg, footer.cycle-bg {
+    cursor: pointer;
+}
+
+.header-bg-1, .footer-bg-1 {
+    background-image: url('https://imgur.com/51ueylh.jpg');
+}
+
+.header-bg-2, .footer-bg-2 {
+    background-image: url('https://i.imgur.com/g1QstK9.jpeg');
 }
 
 /* Navigation Buttons */
@@ -24,18 +36,21 @@ nav ul {
 nav li {
     flex: 1;
     text-align: center;
-    background-color: aquamarine;
 }
 
-nav li:nth-child(odd) {
-    background-color: purple;
+.button-bg {
+    background-image: url('https://imgur.com/a/I0rGLFr.jpg');
+    background-size: cover;
+    background-position: center;
+    transition: background-image 0.5s ease-in-out;
 }
 
-.button-img {
-    display: block;
-    margin: 0 auto;
-    width: 66%;
-    height: 66%;
+.button-bg-1 {
+    background-image: url('https://imgur.com/a/I0rGLFr.jpg');
+}
+
+.button-bg-2 {
+    background-image: url('https://i.imgur.com/g1QstK9.jpeg');
 }
 
 .button-label {
@@ -44,6 +59,7 @@ nav li:nth-child(odd) {
     font-size: 1.5em;
     font-weight: bold;
     margin-top: -10px;
+    text-decoration: none;
 }
 
 /* Main Content */
@@ -69,14 +85,30 @@ nav li:nth-child(odd) {
     align-items: center;
     max-width: 840px;
     margin: 0 auto;
-    background-image: url('https://imgur.com/a/I0rGLFr.jpg');
     background-size: cover;
     background-position: center;
     padding: 20px;
     border-radius: 10px;
+    transition: background-image 0.5s ease-in-out;
 }
 
 .video-container:nth-child(odd) {
+    background-image: url('https://imgur.com/a/I0rGLFr.jpg');
+}
+
+.video-container:nth-child(even) {
+    background-image: url('https://imgur.com/a/I0rGLFr2.jpg');
+}
+
+.video-container.cycle-bg {
+    cursor: pointer;
+}
+
+.video-bg-1 {
+    background-image: url('https://imgur.com/a/I0rGLFr.jpg');
+}
+
+.video-bg-2 {
     background-image: url('https://imgur.com/a/I0rGLFr2.jpg');
 }
 
