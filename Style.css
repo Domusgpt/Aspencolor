@@ -9,7 +9,8 @@ body {
 /* Header and Footer Styles */
 header, footer {
     background-image: url('https://imgur.com/51ueylh.jpg');
-    background-size: coverbackground-position: center;
+    background-size: cover;
+    background-position: center;
     transition: background-image 0.5s ease-in-out;
 }
 
