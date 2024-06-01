@@ -135,6 +135,13 @@ footer {
     margin: 5px 0;
 }
 
+/* Gallery Styles */
+.gallery img {
+    border: 5px solid gold;
+    border-radius: 10px;
+    margin: 5px;
+}
+
 /* Lightbox Styles */
 .lightbox {
     display: none;
@@ -182,4 +189,22 @@ footer {
 
 .pulsating-text {
     animation: pulsate 2s infinite;
+}
+
+/* Snowflake Animation */
+.snowflake {
+    position: absolute;
+    top: 0;
+    width: 10px;
+    height: 10px;
+    background-color: white;
+    border-radius: 50%;
+    opacity: 0.8;
+    animation: fall 10s linear infinite;
+}
+
+@keyframes fall {
+    to {
+        transform: translateY(100vh);
+    }
 }
